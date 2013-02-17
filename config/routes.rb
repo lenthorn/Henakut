@@ -1,4 +1,8 @@
 Henakut::Application.routes.draw do
+  get "site/about"
+
+  get "site/faq"
+
   resources :artists
 
   resources :pieces
@@ -7,6 +11,8 @@ Henakut::Application.routes.draw do
 
 
 	match '/index' => 'site#index'
+	match '/about' => 'site#about'
+	match '/faq' => 'site#faq'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
