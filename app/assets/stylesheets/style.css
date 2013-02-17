@@ -1,0 +1,205 @@
+@charset "UTF-8";
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background: #FFFFFF;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+
+
+/* ~~ this fixed width container surrounds the other divs ~~ */
+.container {
+	width: 960px;
+	background: #FFFFFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background: #FFFFFF;
+	width: 590px;
+	height: 250px;
+	float: right;
+}
+
+.leftheader {
+	width: 370px;
+	height: 250px;
+	float: left;
+}
+
+/* ~~ This is the layout information. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the div. The elements within this div have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+*/
+
+.navbar {
+	height: 48px;
+	width:  960px;
+	clear: both;
+}
+
+
+
+.break {
+	height:5px;
+	background: #7DBD00;
+	clear: both;
+}
+.content {
+
+	padding: 10px 0;
+	clear: both;
+}
+
+.mainartists {
+	float: left;
+	width: 320px ;
+	
+}
+
+.content .mainartists img {
+	padding: 28px;
+}
+
+.mainartists a {
+	font-family: Verdana, Geneva, sans-serif;
+	text-align: center;
+	display: block;
+}
+
+.sidepaintings {
+	float: left;
+	width: 400px;
+}
+
+.sidepaintings img {
+	height: 100px;
+	width: 100px;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	width: 960px;
+	height: 200px;
+}
+
+.leftfooterlinks {
+	width:230px;
+	float:left;
+	height:200px;
+}
+
+
+.righttfooterlinks {
+	width: 230px;
+	float: left;
+	height: 200px;
+}
+
+.righttfooterlogo {
+	width: 500px;
+	float: right;
+	height: 200px;
+}
+
+.righttfooterlogo img {
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.selectedpainting img {
+	display: block;
+	margin: auto;
+}
+
+.artistdetails {
+	float: right;
+	width: 560px;
+}
+
+.paintingmainimage {
+	float: right;
+	width: 560px;
+}
+
+.paintingmaindetails {
+	float: leftt;
+	width: 560px;
+}
+
+.paintingmainimage img {
+	display: block;
+	margin: auto;
+	border-style: double;
+	padding: 16px;
+	background-color: #999;
+}
+.content h1 {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 2em;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: capitalize;
+	color: #999;
+}
+.contactdisp {
+	color: #333;
+}
+
+.photos {
+	float:left;
+	margin:20px;
+	width: 200px;
+	text-align:center;
+}
+.photos img {
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.adminbar {
+	text-align:right;
+}
+
+
+.sidenav {
+	float:left;
+	width: 240px;
+	height: 300px;
+}

@@ -1,0 +1,20 @@
+<h1>Listing pieces</h1>
+
+
+<% @pieces.each do |piece| %>
+
+<div class="photos">
+<%= link_to (image_tag piece.artimage_url, :style => "height:100px"), piece %>
+</br>
+<%= link_to piece.name, piece %>
+</br>
+<span class="price"><%= number_to_currency( piece.price, :unit=>"&euro;") %></span>
+
+
+</div>
+
+<% end %>
+
+<br />
+
+<%= link_to 'New Piece', new_piece_path %>

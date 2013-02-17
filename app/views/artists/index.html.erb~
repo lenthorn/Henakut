@@ -1,0 +1,18 @@
+<h1>Artists</h1>
+<%= link_to 'New Artist', new_artist_path %>
+<% @artists.each do |artist| %>
+
+
+
+<div class="photos">
+<%= link_to (image_tag artist.artistimage_url, :style => "height:100px"), artist %>
+</br>
+<%= link_to artist.artistname, artist %> 
+</br>
+
+
+<%= link_to 'Edit', edit_artist_path(artist) %> |
+<%= link_to 'Destroy', artist, :confirm => 'Are you sure?', :method => :delete %>
+<% end %>
+
+</div>

@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+<script type="text/javascript">
+$(document).ready(function(){
+$("table img").hover(function(){
+$("#main").attr("src",($(this).attr("src")));
+});
+});
+
+</script>
+<div class="sidepaintings">
+
+<table>
+<tr>
+<% @pieces.each_with_index do |piece,index| %>
+	<% if (index %4) == 0 %>
+		</tr><tr>
+	<%end%>	
+	<td>
+		<%= link_to image_tag(piece.artimage_url, :mouseover => "MM_swapImage('main','','#{piece.artimage_url}',1)"), piece_path(piece.id) %>
+	</td>
+
+<% end %>
+</tr>
+</table>
+
+
+
+    <p>&nbsp;</p>
+   
+    <p>&nbsp;</p>
+  </div>
+    <div class="selectedpainting">
+    <p>&nbsp;</p>
+    <%= image_tag(@pieces.first.artimage_url, :name=> "main", :id=>"main") %>
+    <p>&nbsp;</p>
+    </div>
+<div class="artistdetails">
+    
+      <h1><%= @artist.artistname %></h1>
+      
+      <p><%= @artist.bio %>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    </div>
+
+
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>

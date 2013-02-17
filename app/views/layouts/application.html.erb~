@@ -35,7 +35,7 @@
           		<li><a href="../artists.html" title="Browse Art">Browse Art</a>
                 	<ul>
                     	<li><a href="../artists.html" title="By Art">By Art</a></li>
-                        <li class="last"><a href="../pieces.html" title="By Artists">By Artist</a></li>
+                        <li class="last"><a href="#" title="By Artists">By Artist</a></li>
                     </ul>        
                 </li>
               <li class="last"><a href="../facilities.html" title="Blog">Blog</a></li>

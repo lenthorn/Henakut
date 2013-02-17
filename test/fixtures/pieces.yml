@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  price: 9.99
+  arttype: MyString
+  stocknumber: 1
+  artimage_url: MyString
+  artist_id: 1
+  artmedium: MyString
+  artstyle: MyString
+  artcolour: MyString
+  artcolour: MyString
+
+two:
+  name: MyString
+  price: 9.99
+  arttype: MyString
+  stocknumber: 1
+  artimage_url: MyString
+  artist_id: 1
+  artmedium: MyString
+  artstyle: MyString
+  artcolour: MyString
+  artcolour: MyString
