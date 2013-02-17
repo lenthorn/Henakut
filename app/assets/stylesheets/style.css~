@@ -21,19 +21,7 @@ a img { /* this selector removes the default blue border displayed in some brows
 	border: none;
 }
 /* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
-a:link {
-	color: #42413C;
-	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
-}
 
-a:visited {
-	color: #6E6C64;
-	text-decoration: underline;
-}
-a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
-	text-decoration: none;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-}
 
 /* ~~ this fixed width container surrounds the other divs ~~ */
 .container {
@@ -66,6 +54,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	height: 48px;
 	width:  960px;
 	clear: both;
+	margin-bottom: 1px;
 }
 
 
@@ -110,26 +99,74 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 /* ~~ The footer ~~ */
 .footer {
 	width: 960px;
-	height: 200px;
+	height: 300px;
 }
 
 .leftfooterlinks {
 	width:230px;
 	float:left;
-	height:200px;
+	height:300px;
+}
+
+.leftfooterlinks ul {
+	padding: 20px 0;
+	margin:0; 
+}
+
+.leftfooterlinks ul li {
+	color: black;
+	list-style-type:none;
+	padding: 5px;
+}
+
+.leftfooterlinks ul li a {
+	padding: 5px 30px;
+	color: black;
+	text-decoration:none;
+	font-size: 17px;
+}
+
+.leftfooterlinks ul li a:hover {
+	color: black;
+	text-decoration: underline;
 }
 
 
-.righttfooterlinks {
-	width: 230px;
+.rightfooterlinks {
+	width: 200px;
 	float: left;
-	height: 200px;
+	height: 300px;
+	padding: 0;
+	margin: 0;
+}
+
+.rightfooterlinks ul {
+	padding: 20px 0;
+	margin:0; 
+}
+
+.rightfooterlinks ul li {
+	color: black;
+	list-style-type:none;
+	padding: 5px;
+}
+
+.rightfooterlinks ul li a {
+	padding: 5px, 30px;
+	color: black;
+	text-decoration:none;
+	font-size: 17px;
+}
+
+.rightfooterlinks ul li a:hover {
+	color: black;
+	text-decoration: underline;
 }
 
 .righttfooterlogo {
-	width: 500px;
+	width: 300px;
 	float: right;
-	height: 200px;
+	height: 300px;
 }
 
 .righttfooterlogo img {

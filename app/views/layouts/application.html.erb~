@@ -35,7 +35,7 @@
           		<li><a href="../artists.html" title="Browse Art">Browse Art</a>
                 	<ul>
                     	<li><a href="../artists.html" title="By Art">By Art</a></li>
-                        <li class="last"><a href="#" title="By Artists">By Artist</a></li>
+                        <li class="last"><a href="../pieces.html" title="By Artists">By Artist</a></li>
                     </ul>        
                 </li>
               <li class="last"><a href="../facilities.html" title="Blog">Blog</a></li>
@@ -60,9 +60,22 @@
   </div>
   <div class="footer">
   <div class="leftfooterlinks">
-  
+  <ul>
+	<li><a href="../index.html" title="Home">- Home</a></li>
+        <li><a href="../pieces.html" title="Browse Art">- Browse Art</a>
+	<li><a href="../artists.html" title="Browse Artists">- Browse Artists</a>
+	<li><a href="../facilities.html" title="Blog">- Blog</a></li>
+	<li><a href="#" title="My Account">- My Account</a></li>
+  </ul>
   </div>
-  <div class="righttfooterlinks">
+  <div class="rightfooterlinks">
+  <ul>
+	<li><a href="#" title="About Us">- About Us</a></li>
+        <li><a href="#" title="FAQ">- FAQ</a>
+	<li><a href="#" title="Commission Artwork">- Commission Artwork</a>
+	<li><a href="#" title="Corporate Clients">- Corporate Clients</a></li>
+	<li><a href="#" title="Become an Artist">- Become an Artist</a></li>
+  </ul>
   
   </div>
   
