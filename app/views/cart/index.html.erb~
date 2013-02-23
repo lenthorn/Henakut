@@ -3,7 +3,7 @@
 <p>Your Cart is empty.</p>
 <% end %>
 <% total = 0 %>
-<img class="floatright" src="/assets/shopping-cart.png" />
+
 <table class="cart">
 <tr>
 <td class="legend"></td>

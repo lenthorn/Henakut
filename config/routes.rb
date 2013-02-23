@@ -1,4 +1,16 @@
 Henakut::Application.routes.draw do
+  get "orderitems/index"
+
+  get "orderitems/show"
+
+  get "orderitems/new"
+
+  get "orderitems/edit"
+
+  resources :orders
+
+  devise_for :users
+
   get "cart/index"
 
   get "site/about"
@@ -11,6 +23,20 @@ Henakut::Application.routes.draw do
 
   get "site/index"
 
+  	resources :orders do
+  	resources :orderitems
+  	end
+
+	devise_for :users do
+	resources :orders
+	end
+
+	resources :orders do
+	resources :orderitems
+	end
+	
+
+	match '/checkout' => 'cart#createOrder'
 
 	match '/index' => 'site#index'
 	match '/about' => 'site#about'
@@ -27,7 +53,9 @@ Henakut::Application.routes.draw do
 	match '/clearCart' => 'cart#clearCart'
 	match '/checkout' => 'cart#createOrder'
 
-
+	
+	root :to => 'site#index'
+	
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -18,6 +18,18 @@
             <![endif]-->
         </noscript>
 <div class="container">
+
+<div class="adminbar">
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<% if user_signed_in? %>
+<div>Signed in as... <%= current_user.email %> (<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>)</div>
+<% else %>
+<%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
+<% end %>
+
+
+</div>
 <div class="leftheader">
 <a href="../index.html" title="Henakut"><img src="/assets/herakut_tag.png" /></a>
 
