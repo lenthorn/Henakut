@@ -1,4 +1,6 @@
-<h1>Listing pieces</h1>
+<div class="lefthone">
+<h2>Browse Art</h2><img src="/assets/linebreak.jpg" />
+</div>
 
 
 <% @pieces.each do |piece| %>
@@ -9,7 +11,8 @@
 <%= link_to piece.name, piece %>
 </br>
 <span class="price"><%= number_to_currency( piece.price, :unit=>"&euro;") %></span>
-
+</br>
+<a href="/cart/<%= piece.id %>">Add to Cart</a>
 
 </div>
 

@@ -7,7 +7,6 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-</head>
 <body class="no-js">
 <script>
 			var el = document.getElementsByTagName("body")[0];
@@ -20,13 +19,10 @@
         </noscript>
 <div class="container">
 <div class="leftheader">
-<img src="/assets/herakut_tag.png" />
+<a href="../index.html" title="Henakut"><img src="/assets/herakut_tag.png" /></a>
+
 
 </div>
-
-  <div class="header">
-  
-  <!-- end .header --></div>
   <div class="navbar">
 
 <nav id="topNav">
@@ -45,6 +41,9 @@
   </div>
   <div class="break">
   </div>
+<div class="searchbox">
+<%= render :partial => 'pieces/search' %>
+</div>
   <div class="content">
  
 <%= yield %>
@@ -80,7 +79,7 @@
   </div>
   
   <div class="righttfooterlogo">
-  <img src="/assets/herakut_tag_foot.png" />
+  <a href="../index.html" title="Henakut"><img src="/assets/herakut_tag_foot.png" /></a>
   </div> 
 <script src="js/jquery.js"></script>
         <script src="js/modernizr.js"></script>

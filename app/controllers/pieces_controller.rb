@@ -22,6 +22,44 @@ def show
     end
   end
 
+def artstyle
+    @pieces = Piece.find_all_by_artstyle(params[:id])
+    @artstyle = params[:id]
+   respond_to do |format|
+   format.html # index.html.erb
+   format.json { render json: @pieces }
+  end
+ end
+
+def artmedium
+    @pieces = Piece.find_all_by_artmedium(params[:id])
+    @artmedium = params[:id]
+   respond_to do |format|
+   format.html # index.html.erb
+   format.json { render json: @pieces }
+  end
+ end
+
+def artcolour
+    @pieces = Piece.find_all_by_artcolour(params[:id])
+    @artcolour = params[:id]
+   respond_to do |format|
+   format.html # index.html.erb
+   format.json { render json: @pieces }
+  end
+ end
+
+ def search
+    @search_term = params[:q]
+    st = "%#{params[:q]}%"
+    @pieces = Piece.where("Name like ? or Artstyle like ?", st, st)
+    respond_to do |format|
+    format.html # index.html.erb
+    format.json { render json: @pieces }
+   end
+  end
+
+
   # GET /pieces/new
   # GET /pieces/new.json
   def new

@@ -1,4 +1,6 @@
 Henakut::Application.routes.draw do
+  get "cart/index"
+
   get "site/about"
 
   get "site/faq"
@@ -13,6 +15,18 @@ Henakut::Application.routes.draw do
 	match '/index' => 'site#index'
 	match '/about' => 'site#about'
 	match '/faq' => 'site#faq'
+	
+	match '/artstyle/:id' => 'pieces#artstyle'
+	match '/artmedium/:id' => 'pieces#artmedium'
+	match '/artcolour/:id' => 'pieces#artcolour'
+	match'/search' => 'pieces#search'
+	
+	match '/cart' => 'cart#index'
+	match '/cart/:id' => 'cart#add'
+	match '/cart/remove/:id' => 'cart#remove'
+	match '/clearCart' => 'cart#clearCart'
+	match '/checkout' => 'cart#createOrder'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
