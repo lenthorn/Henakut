@@ -2,8 +2,8 @@
 body {
 	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
 	background: #FFFFFF;
-	margin: 0;
-	padding: 0;
+	margin: 0px;
+	padding: 0px;
 	color: #000;
 }
 
@@ -27,7 +27,8 @@ a img { /* this selector removes the default blue border displayed in some brows
 .container {
 	width: 960px;
 	background: #FFFFFF;
-	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+	margin: 0 auto;
+	padding: 0px; /* the auto value on the sides, coupled with the width, centers the layout */
 }
 
 /* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
@@ -101,8 +102,7 @@ a img { /* this selector removes the default blue border displayed in some brows
 }
 
 .lefthone img {
-	position: absolute;
-	right: 10px
+	float: right;
 }
 
 .mainartists a {
@@ -158,7 +158,7 @@ a img { /* this selector removes the default blue border displayed in some brows
 
 
 .rightfooterlinks {
-	width: 200px;
+	width: 230px;
 	float: left;
 	height: 300px;
 	padding: 0;
@@ -265,19 +265,88 @@ a img { /* this selector removes the default blue border displayed in some brows
 	width: 200px;
 	text-align:center;
 }
+
 .photos img {
 	display:block;
 	margin-left:auto;
 	margin-right:auto;
 }
 
-.adminbar {
-	text-align:right;
+.photos a {
+	color: #6A003C;
+	font-style: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	text-decoration: none;
 }
 
+.adminbar {
+	text-align: right;
+	background-color: black;
+	height: 50px;
+	margin: 0px;
+	padding: 0px;
+	border-bottom: solid #7DBD00 5px;
+}
+
+.adminbar {
+	color: white;
+}
+
+.adminbar a {
+	color: white;
+}
 
 .sidenav {
 	float:left;
 	width: 240px;
 	height: 300px;
 }
+
+.digg_pagination {
+  clear: both;
+  background: white;
+  cursor: default;
+  padding-bottom: 50px;
+  
+  /* self-clearing method: */ }
+  .digg_pagination a, .digg_pagination span, .digg_pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .digg_pagination .disabled {
+    color: #999999;
+    border: 1px solid #dddddd; }
+  .digg_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #7DBD00;
+    color: white;
+    border: 1px solid #000000; }
+  .digg_pagination a {
+    text-decoration: none;
+    color: #7DBD00;
+    border: 1px solid #000000; }
+    .digg_pagination a:hover, .digg_pagination a:focus {
+      color: #006600;
+      border-color: #000033; }
+  .digg_pagination .page_info {
+    background: #2EB235;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center; }
+    .digg_pagination .page_info b {
+      color: #000033;
+      background: #2EB235;
+      padding: 0.1em 0.25em; }
+  .digg_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .digg_pagination {
+    height: 1%; }
+  *:first-child + html .digg_pagination {
+    overflow: hidden; }

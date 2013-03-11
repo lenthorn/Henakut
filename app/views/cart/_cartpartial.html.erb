@@ -1,0 +1,7 @@
+<img src="/assets/shopping_cart_small.png" />
+<% total = 0 %>
+<% @cart.each do | id, quantity | %>
+<% piece = Piece.find_by_id(id) %>
+<% total += quantity * piece.price %>
+<% end %>
+<a href="cart/index.html"><%= number_to_currency(total, :unit => "€") %></a>

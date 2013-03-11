@@ -1,4 +1,14 @@
 Henakut::Application.routes.draw do
+  resources :categories, :except => [:index, :show]
+  resources :forums, :except => :index do
+    resources :topics, :shallow => true, :except => :index do
+      resources :posts, :shallow => true, :except => [:index, :show]
+    end
+    root :to => 'categories#index', :via => :get
+  end
+
+  resources :profiles
+
   get "orderitems/index"
 
   get "orderitems/show"
@@ -37,7 +47,7 @@ Henakut::Application.routes.draw do
 	
 
 	match '/checkout' => 'cart#createOrder'
-
+  match '/myprofile' => 'profiles#myprofile' 
 	match '/index' => 'site#index'
 	match '/about' => 'site#about'
 	match '/faq' => 'site#faq'

@@ -10,4 +10,10 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :orders
+
+  has_one :profiles
+
+  has_many :topics, :dependent => :destroy
+  has_many :posts, :dependent => :destroy
+
 end
