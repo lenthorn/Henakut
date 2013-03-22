@@ -1,4 +1,4 @@
-/* ie styles for when js disabled */
+/* ie styles for when js disabled 
 .navbar ul { padding:0; margin:0; background:url(../fallback/navRight.gif) no-repeat 100% 0; font:16px Tahoma, Sans-serif; }
 .navbar ul:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
 .navbar li { height:44px; position:relative; float:left; list-style-type:none; background:url(../fallback/navBG.gif) repeat-x 0 0; }
@@ -18,4 +18,4 @@
 .navbar ul a span { height:7px; width:12px; margin-top:8px; text-indent:-5000px; overflow:hidden; background:url(../fallback/indicator.png) no-repeat 0 0; }
 .navbar ul ul li { background:none; }
 .navbar ul ul li.last { margin-bottom:10px; }
-.navbar ul ul li a { white-space:pre; border-left:0; }
+.navbar ul ul li a { white-space:pre; border-left:0; }*/

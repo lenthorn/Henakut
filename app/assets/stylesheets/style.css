@@ -28,7 +28,9 @@ a img { /* this selector removes the default blue border displayed in some brows
 	width: 960px;
 	background: #FFFFFF;
 	margin: 0 auto;
-	padding: 0px; /* the auto value on the sides, coupled with the width, centers the layout */
+	padding: 0px; 
+	box-shadow: 2px 2px 2px #666666;
+	/* the auto value on the sides, coupled with the width, centers the layout */
 }
 
 /* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
@@ -57,21 +59,33 @@ a img { /* this selector removes the default blue border displayed in some brows
 	clear: both;
 	margin-bottom: 0px;
 }
-
+.break2 {
+	height: 5px;
+	background: #00CC00;
+	margin-top: -6px;
+	clear: both;
+}
 
 
 .break {
-	height:5px;
-	background: #7DBD00;
+	height: 5px;
+	background: #00CC00;
+	margin-top: 2px;
 	clear: both;
 }
+
 .content {
 
-	padding-top: 30px;
+	padding-top: 0px;
 	padding-bottom: 30px;
 	clear: both;
 }
 
+.content img {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
 .mainartists {
 	float: left;
 	width: 320px ;
@@ -85,6 +99,7 @@ a img { /* this selector removes the default blue border displayed in some brows
 .lefthone {
 	width: 960px;
 	padding-bottom: 20px;
+	padding-top: 20px;
 }
 
 .lefthone  h2 {
@@ -103,6 +118,7 @@ a img { /* this selector removes the default blue border displayed in some brows
 
 .lefthone img {
 	float: right;
+	padding-top: 8px;
 }
 
 .mainartists a {
@@ -131,6 +147,7 @@ a img { /* this selector removes the default blue border displayed in some brows
 	width:230px;
 	float:left;
 	height:300px;
+	text-shadow: 2px 2px 2px #666666;
 }
 
 .leftfooterlinks ul {
@@ -163,6 +180,7 @@ a img { /* this selector removes the default blue border displayed in some brows
 	height: 300px;
 	padding: 0;
 	margin: 0;
+	text-shadow: 2px 2px 2px #666666;
 }
 
 .rightfooterlinks ul {
@@ -223,8 +241,8 @@ a img { /* this selector removes the default blue border displayed in some brows
 }
 
 .artistdetails {
-	float: right;
-	width: 560px;
+	clear: both;
+	width: 960px;
 }
 
 .paintingmainimage {
@@ -255,6 +273,13 @@ a img { /* this selector removes the default blue border displayed in some brows
 	text-transform: capitalize;
 	color: #999;
 }
+
+.about img {
+	float: right;
+	padding-left: 15px;
+	padding-bottom: 15px;
+}
+
 .contactdisp {
 	color: #333;
 }
@@ -270,6 +295,7 @@ a img { /* this selector removes the default blue border displayed in some brows
 	display:block;
 	margin-left:auto;
 	margin-right:auto;
+	border:1px solid #e2e2e2;
 }
 
 .photos a {
@@ -280,26 +306,57 @@ a img { /* this selector removes the default blue border displayed in some brows
 
 .adminbar {
 	text-align: right;
-	background-color: black;
+	width: 100%;
+	background-color: white;
 	height: 50px;
 	margin: 0px;
 	padding: 0px;
-	border-bottom: solid #7DBD00 5px;
+	
 }
 
 .adminbar {
-	color: white;
+	color: black;
 }
 
 .adminbar a {
-	color: white;
+	color: black;
+}
+
+.admincart {
+	float: right;
+	margin-right: 20px;
+}
+
+.adminlogin {
+	float: right;
+	margin-right: 20px;
 }
 
 .sidenav {
+	background-image: url('/assets/box.jpg');
+	margin-top: 30px;
 	float:left;
 	width: 240px;
-	height: 300px;
+	height: 600px;
 }
+
+.sidenav form {
+	padding-left: 23px;
+	padding-top: 20px;
+}
+
+ .pretty a .current {  
+   padding-right: 12px;  
+   background-repeat: no-repeat;  
+   background-position: right center;  
+ }  
+ .pretty a .asc {   
+  background-image: url(/images/up_arrow.gif);   
+ }  
+   
+ .pretty a .desc {   
+   background-image: url(/images/down_arrow.gif);   
+ } 
 
 .digg_pagination {
   clear: both;
@@ -319,12 +376,12 @@ a img { /* this selector removes the default blue border displayed in some brows
   .digg_pagination .current {
     font-style: normal;
     font-weight: bold;
-    background: #7DBD00;
+    background: #00CC00;
     color: white;
     border: 1px solid #000000; }
   .digg_pagination a {
     text-decoration: none;
-    color: #7DBD00;
+    color: #00CC00;
     border: 1px solid #000000; }
     .digg_pagination a:hover, .digg_pagination a:focus {
       color: #006600;

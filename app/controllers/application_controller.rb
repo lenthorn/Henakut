@@ -12,4 +12,14 @@ class ApplicationController < ActionController::Base
    def the_cart
     @cart = session[:cart] || {}
   end
+
+
+   def featured
+      @featured = Artist.find_by_featuredartist true
+  	
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @featured }
+  end
+  end
 end	

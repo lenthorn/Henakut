@@ -1,6 +1,14 @@
 class ArtistsController < ApplicationController
   # GET /artists
   # GET /artists.json
+before_filter :ensure_admin, :except => [:index, :show, :category, :search]
+
+def ensure_admin
+    unless current_user && current_user.admin?
+      render :text => "You dont have the access to do this!", :status => :unauthorized
+    end
+end
+
   def index
     @artists = Artist.all
 
@@ -9,7 +17,7 @@ class ArtistsController < ApplicationController
       format.json { render json: @artists }
     end
   end
-
+  
   # GET /artists/1
   # GET /artists/1.json
   def show

@@ -1,0 +1,8 @@
+<%= @featured.each do |featured| %>
+<div class="photos">
+<%= link_to (image_tag artist.artistimage_url, :style => "height:100px"), artist %>
+<br />
+<%= link_to artist.artistname, artist %>
+</div>
+
+<% end %>

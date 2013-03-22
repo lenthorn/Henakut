@@ -22,13 +22,17 @@
 <div class="container">
 
 <div class="adminbar">
+  <div class="admincart">
   <% if user_signed_in? %>
   <%= render :partial => 'cart/cartpartial' %>
+  <a href="/users/sign_in">View Profile</a>
+</div>
+<div class="admincart">
 <div>Signed in as... <%= current_user.email %> (<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>)</div>
 <% else %>
 <%= link_to 'Register', new_user_registration_path %> <%= link_to 'Sign in', new_user_session_path %>
 <% end %>
-
+</div>
 
 </div>
 <div class="leftheader">
@@ -47,7 +51,7 @@
                         <li class="last"><a href="../artists.html" title="By Artists">By Artist</a></li>
                     </ul>        
                 </li>
-              <li class="last"><a href="../facilities.html" title="Blog">Blog</a></li>
+              <li class="last"><a href="#" title="Blog">Blog</a></li>
               <li class="last"><a href="../forums.html" title="Forum">Forum</a></li>
           </ul>
         </nav>
@@ -56,18 +60,10 @@
   <div class="break">
   </div>
 <div class="searchbox">
-<%= render :partial => 'pieces/search' %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+
 </div>
   <div class="content">
 <%= yield %>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-
-    <p>&nbsp;</p>
   </div>
   <div class="break">
   
@@ -78,8 +74,8 @@
 	<li><a href="../index.html" title="Home">- Home</a></li>
         <li><a href="../pieces.html" title="Browse Art">- Browse Art</a>
 	<li><a href="../artists.html" title="Browse Artists">- Browse Artists</a>
-	<li><a href="../facilities.html" title="Blog">- Blog</a></li>
-	<li><a href="#" title="My Account">- My Account</a></li>
+	<li><a href="#" title="Blog">- Blog</a></li>
+	<li><a href="/users/sign_in" title="My Account">- My Account</a></li>
   </ul>
   </div>
   <div class="rightfooterlinks">

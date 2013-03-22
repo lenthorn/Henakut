@@ -35,15 +35,16 @@ $("#main").attr("src",($(this).attr("src")));
     <p>&nbsp;</p>
     </div>
 <div class="artistdetails">
+    <div class="lefthone">
+<h2><%= @artist.artistname %></h2><img src="/assets/linebreak.jpg" />
+
+</div>
     
-      <h1><%= @artist.artistname %></h1>
       
-      <p><%= @artist.bio %>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
+      <p><%= @artist.bio %></p>
     </div>
 
-
+<% if current_user.try(:admin?) %>
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
+<% end %>

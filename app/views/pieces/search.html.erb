@@ -1,28 +1,30 @@
-<h1>Search Product Catalog</h1>
+<div class="lefthone">
+<h1>Search Product Catalog</h1><img src="/assets/linebreak.jpg" />
+</div>
 <br />
 <h3>Searching For: <%= @search_term %></h3>
+
+<%= render :partial => 'pieces/search' %>
+<% @pieces.each do |piece| %>
+
+<div class="photos">
+<%= link_to (image_tag piece.artimage_url, :style => "height:100px"), piece %>
+<br />
+<%= link_to piece.name, piece %>
+<br />
+<span class="price"><%= number_to_currency( piece.price, :unit=>"&euro;") %></span>
+<br />
+<a href="/cart/<%= piece.id %>">Add to Cart</a>
+
+</div>
 <table class="catalog">
 <% if @pieces.length == 0 %>
 <br />
 <h2>No Products found for this search term!!</h2>
 <% end %>
-<% @pieces.each do |piece| %>
-<div class="photos">
-<%= link_to (image_tag piece.artimage_url, :style => "height:100px"), piece %>
-</br>
-<%= link_to piece.name, piece %>
-</br>
-<%= number_to_currency( piece.price, :unit=>"&euro;") %>
-</br>
-<div class="links">
+<% end %>
 
-<td><%= link_to 'Show', piece %></td>
-<td><%= link_to 'Edit', edit_piece_path(piece) %></td>
-<td><%= link_to 'Destroy', piece, confirm: 'Are you sure?', method: :delete %></td>
-
-
-</div>
-
-</div>
-
+<br />
+<% if current_user.try(:admin?) %>
+<%= link_to 'New Piece', new_piece_path %>
 <% end %>

@@ -1,6 +1,19 @@
+<div class="sidenav">
 <%= form_tag("/search", :method => "get") do %>
-<%= label_tag(:q, "Search for:") %>
-<%= text_field_tag(:q) %>
-<%= submit_tag("Search") %>
-<% end %>
-
+	<%= hidden_field_tag :direction, params[:direction] %>
+  	<%= hidden_field_tag :sort, params[:sort] %>
+	<%= label_tag(:q, "Search for:") %>
+	<%= text_field_tag(:q) %>
+	<br />
+	<br />
+	<%= radio_button_tag(:arttype, "All") %>
+	<%= label_tag(:arttype_all, "All") %>
+	<%= radio_button_tag(:arttype, "Print") %>
+	<%= label_tag(:arttype_print, "Print") %>
+	<%= radio_button_tag(:arttype, "Original") %>
+	<%= label_tag(:arttype_original, "Original") %>
+	<br />
+	<br />
+	<%= submit_tag("Search") %>
+	<% end %>
+</div>

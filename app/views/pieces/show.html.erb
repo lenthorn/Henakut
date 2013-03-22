@@ -1,7 +1,13 @@
+<div class="lefthone">
+<h2><%= @artist.artistname %></h2><img src="/assets/linebreak.jpg" />
+
+</div>
 <p id="notice"><%= notice %></p>
 
 <div class="paintingmainimage">
   <%= image_tag @piece.artimage_url %>
+  <a href="http://pinterest.com/pin/create/button/" class="pin-it-button" count-layout="none"><img src="//assets.pinterest.com/images/PinExt.png" alt="Pin it" / ></a>
+<script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>
 </div>
 
 <div class="paintingmaindetails">
@@ -36,6 +42,7 @@
 <a href="/cart/<%= @piece.id %>">Add to Cart</a>
 </div>
 
-
+<% if current_user.try(:admin?) %>
 <%= link_to 'Edit', edit_piece_path(@piece) %> |
+<% end %>
 <%= link_to 'Back', pieces_path %>

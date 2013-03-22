@@ -1,15 +1,13 @@
 <p id="notice"><%= notice %></p>
+<div class="lefthone">
+<h2>My Profile</h2><img src="/assets/linebreak.jpg" />
 
-<p>
-  <b>Firstname:</b>
-  <%= @profile.firstname %>
-</p>
+</div>
 
-<p>
-  <b>Lastname:</b>
-  <%= @profile.lastname %>
-</p>
-
+  <h2><%= @profile.firstname %> <%= @profile.lastname %></h2>
+  <br />
+<h4>Your Details:</h4>
+ <br />
 <p>
   <b>Address:</b>
   <%= @profile.address %>
@@ -20,11 +18,23 @@
   <%= @profile.mobile %>
 </p>
 
-<p>
-  <b>User:</b>
-  <%= @profile.user %>
-</p>
+<%= link_to 'Edit Details', edit_profile_path(@profile) %>
+<div class="lefthone">
+<h2>Favourite Artists</h2><img src="/assets/linebreak.jpg" />
 
+</div>
+  <br />
+    <br />
+      <br />
+        <br />
+          <br />
+<div class="lefthone">
+<h2>Favourite Articles</h2><img src="/assets/linebreak.jpg" />
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+</div>
+  <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />

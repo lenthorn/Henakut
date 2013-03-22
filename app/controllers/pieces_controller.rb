@@ -1,26 +1,47 @@
 class PiecesController < ApplicationController
   # GET /pieces
   # GET /pieces.json
-  def index
-    @pieces = Piece.paginate(:per_page=>9, :page => params[:page])
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @pieces }
+  before_filter :ensure_admin, :except => [:index, :show, :category, :search]
+  helper_method :sort_column, :sort_direction 
+  
+def ensure_admin
+    unless current_user && current_user.admin?
+      render :text => "You dont have the access to do this!", :status => :unauthorized
     end
-  end
+end
 
-  # GET /pieces/1
-  # GET /pieces/1.json
 def show
     @piece = Piece.find(params[:id])
-	@artist = Artist.find(@piece.artist_id)
+  @artist = Artist.find(@piece.artist_id)
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @piece }
     end
   end
+
+  def index
+    @pieces = Piece.order(sort_column + ' ' + sort_direction).paginate(:per_page=>9, :page => params[:page])
+     respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @pieces }
+    end
+  end
+
+   private  
+    def sort_column  
+    Piece.column_names.include?(params[:sort]) ? params[:sort] : "name"  
+    end  
+       
+    def sort_direction  
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"  
+    end 
+
+
+  # GET /pieces/1
+  # GET /pieces/1.json
+
+
 
 def artstyle
     @pieces = Piece.find_all_by_artstyle(params[:id])
@@ -50,11 +71,32 @@ def artcolour
  end
 
  def search
-    @search_term = params[:q]
-    st = "%#{params[:q]}%"
-    @pieces = Piece.where("Name like ? or Artstyle like ?", st, st)
+    @pieces = []
+    
+    q = "%#{params[:q]}%"
+
+    @pieces += Piece.find :all, :conditions => [
+      "arttype LIKE ? and (name LIKE ? or artstyle LIKE ?)",
+      params[:arttype],
+      q,
+      q
+    ]
+
+   artists = Artist.find :all, :conditions => [
+      "artistname LIKE ?",
+      q
+    ]
+
+
+    artists.each{ |artist| 
+      artist.pieces.each{ |piece|
+        @pieces += [piece] if piece.arttype == params[:arttype]
+      } 
+    }
+    
+     @search_term = params[:q]
     respond_to do |format|
-    format.html # index.html.erb
+      format.html # index.html.erb
     format.json { render json: @pieces }
    end
   end

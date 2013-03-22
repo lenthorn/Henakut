@@ -1,7 +1,7 @@
 <div class="lefthone">
 <h2>Browse Artists</h2><img src="/assets/linebreak.jpg" />
 </div>
-<%= link_to 'New Artist', new_artist_path %>
+
 <% @artists.each do |artist| %>
 
 
@@ -12,10 +12,11 @@
 <%= link_to artist.artistname, artist %> 
 <br />
 
-
+<% if current_user.try(:admin?) %>
 <%= link_to 'Edit', edit_artist_path(artist) %> |
 <%= link_to 'Destroy', artist, :confirm => 'Are you sure?', :method => :delete %>
-
+<%= link_to 'New Artist', new_artist_path %>
+<% end %>
 
 </div>
 <% end %>
