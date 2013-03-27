@@ -1,3 +1,4 @@
+
 <div class="lefthone">
 <h1>Search Product Catalog</h1><img src="/assets/linebreak.jpg" />
 </div>
@@ -23,7 +24,8 @@
 <h2>No Products found for this search term!!</h2>
 <% end %>
 <% end %>
-
+<%= "good" if (@test.nil?) %>
+<%= "bad" unless (@test.nil?) %>
 <br />
 <% if current_user.try(:admin?) %>
 <%= link_to 'New Piece', new_piece_path %>

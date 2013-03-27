@@ -71,6 +71,7 @@ def artcolour
  end
 
  def search
+    
     @pieces = []
     
     q = "%#{params[:q]}%"

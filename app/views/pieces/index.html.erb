@@ -2,10 +2,10 @@
 <h2>Browse Art</h2><img src="/assets/linebreak.jpg" />
 </div>
 <%= render :partial => 'pieces/search' %>
-
+<p>Sort By:
 <%= sortable "name" %>
 <%= sortable "price" %>
-
+</p>
 <% @pieces.each do |piece| %>
 
 <div class="photos">
@@ -16,7 +16,7 @@
 <br />
 <span class="price"><%= number_to_currency( piece.price, :unit=>"&euro;") %></span>
 <br />
-<a href="/cart/<%= piece.id %>">Add to Cart</a>
+<a href="/cart/<%= piece.id %>"><img style="border: 0px;" src="/assets/add to cart 2.jpg" /></a>
 
 </div>
 

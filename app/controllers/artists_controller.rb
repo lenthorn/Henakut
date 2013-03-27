@@ -9,6 +9,8 @@ def ensure_admin
     end
 end
 
+
+
   def index
     @artists = Artist.all
 

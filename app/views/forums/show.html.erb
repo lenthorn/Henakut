@@ -1,15 +1,20 @@
-<div class="right controls"><%= link_to "Back to Forum List", forums_path %></div>
+
+  <% if current_user.try(:admin?) %>
+  <div class="right controls"><%= link_to "Back to Forum List", forums_path %></div>
+<% end %>
 <div class="module">
   <div class="module_header">
     <%= @forum.title %>
-    <% if current_user.try(:admin?) %>
+    
     <span class="controls right">
 
-      <%= link_to "New Topic", new_forum_topic_path(@forum) %>
-      <%= link_to "Edit Forum", edit_forum_path(@forum) %>
+      <%= link_to "New Piece", new_forum_topic_path(@forum) %>
+      <% if current_user.try(:admin?) %>
+      <%= link_to "Edit forum", edit_forum_path(@forum) %>
       <%= link_to "Delete Forum", forum_path(@forum), :confirm => "Are you sure you want to delete this forum?", :method => :delete %>
+      <% end %>
     </span>
-    <% end %>
+
   </div>
   <div>
     <table>

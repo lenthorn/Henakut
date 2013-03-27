@@ -6,7 +6,7 @@ Henakut::Application.routes.draw do
     end
     root :to => 'categories#index', :via => :get
   end
-
+match'/search' => 'pieces#search'
   resources :profiles
 
   get "orderitems/index"
@@ -55,7 +55,7 @@ Henakut::Application.routes.draw do
 	match '/artstyle/:id' => 'pieces#artstyle'
 	match '/artmedium/:id' => 'pieces#artmedium'
 	match '/artcolour/:id' => 'pieces#artcolour'
-	match'/search' => 'pieces#search'
+	
 	
 	match '/cart' => 'cart#index'
 	match '/cart/:id' => 'cart#add'

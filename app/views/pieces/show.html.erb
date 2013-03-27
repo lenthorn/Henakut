@@ -1,48 +1,49 @@
-<div class="lefthone">
-<h2><%= @artist.artistname %></h2><img src="/assets/linebreak.jpg" />
+  <div class="lefthone">
+<h2><%= link_to @artist.artistname, artist_path(@artist.id) %></h2><img src="/assets/linebreak.jpg" />
 
 </div>
 <p id="notice"><%= notice %></p>
 
 <div class="paintingmainimage">
   <%= image_tag @piece.artimage_url %>
-  <a href="http://pinterest.com/pin/create/button/" class="pin-it-button" count-layout="none"><img src="//assets.pinterest.com/images/PinExt.png" alt="Pin it" / ></a>
-<script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>
+  
 </div>
 
 <div class="paintingmaindetails">
-<p>
-  <span class="productdetails">Name:</span>
-  <%= @piece.name %>
-</p>
 
-<p>
-  <span class="productdetails">Price:</span>
-  <span class="price"><%= number_to_currency( @piece.price, :unit=>"&euro;") %></span>
-</p>
+  
+  <h2><%= @piece.name %></h2>
+  <h3>by : <%= link_to @artist.artistname, artist_path(@artist.id) %></h3> 
+    <h4>Price : <span class="price"><%= number_to_currency( @piece.price, :unit=>"&euro;") %></span></h4> 
 
-<p>
-  <span class="productdetails">Arttype:</span>
+<p> 
+
+
+  <span class="productdetails">Art Type:</span>
   <%= @piece.arttype %>
-</p>
-
-<p>
-  <span class="productdetails">Stocknumber:</span>
-  <%= @piece.stocknumber %>
-</p>
-<p>
-  <span class="productdetails">Artist:</span>
-  <%= @artist.artistname %>
-</p>
-
-<p>
+<br />
+  <span class="productdetails">Quantity:</span>
+  <%= @piece.stocknumber %> 
+<br />
   <span class="productdetails">Category:</span>
   <%= @piece.artstyle %>
 </p>
-<a href="/cart/<%= @piece.id %>">Add to Cart</a>
-</div>
+<p> 
+<a href="/cart/<%= @piece.id %>"><img style="border: 0px;" src="/assets/add to cart 2.jpg" /></a>
+<br />
+
 
 <% if current_user.try(:admin?) %>
 <%= link_to 'Edit', edit_piece_path(@piece) %> |
 <% end %>
-<%= link_to 'Back', pieces_path %>
+<br />
+<a href="http://pinterest.com/pin/create/button/" class="pin-it-button" count-layout="none"><img src="//assets.pinterest.com/images/PinExt.png" alt="Pin it" / ></a>
+<script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script> 
+</p>
+<a href="javascript:history.go(-1)"><img src="/assets/backicon.png" /></a>
+</div>
+<div class="lefthone">
+<h2>About the Artist</h2><img src="/assets/linebreak.jpg" />
+
+</div>
+<p><%= @artist.bio %></p>

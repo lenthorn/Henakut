@@ -1,12 +1,16 @@
+<% if current_user.try(:admin?) %>
 <div class="right controls"><%= link_to "New Forum Category", new_category_path %></div>
+<% end %>
 <% @categories.each do |category| %>
   <div class="module">
     <div class="module_header">
       <%= category.title %>
       <span class="controls right smaller">
+        <% if current_user.try(:admin?) %>
         <%= link_to "New Forum", new_forum_path %>
         <%= link_to "Edit Category", edit_category_path(category) %>
         <%= link_to "Delete Category", category_path(category), :confirm => "Are you sure you want to delete this category?", :method => :delete %>
+        <% end %>
       </span>
     </div>
     <% if category.forums.size > 0 %>
@@ -14,16 +18,17 @@
       <table>
         <tr class="smaller">
           <th colspan="2" align="left">Forum</th>
-          <th>Topics</th>
-          <th>Posts</th>
+          <th>Pieces</th>
+          <th>Comments</th>
           <th class="last_post" align="left">Last Post</th>
         </tr>
         <% category.forums.each do |forum| %>
         <tr>
           <td class="icon"><%= image_tag '/assets/icon.png' %></td>
           <td class="description">
-            <%= link_to forum.title, forum_path(forum) %><br />
+            <%= link_to 'Art Swap', forum_path(forum) %><br />
             <span class="smaller"><%= forum.description %></span><br />
+          </td>
           </td>
           <td class="counts smaller"><%= forum.topics.size %></td>
           <td class="counts smaller"><%= forum.posts.size - forum.topics.size %></td>
@@ -32,7 +37,7 @@
               <%= forum.posts.last.created_at %><br />
               <%= forum.posts.last.user.email %>
             <% else %>
-              No Topics / Posts
+              No Pieces / Comments
             <% end %>
           </td>
         </tr>
