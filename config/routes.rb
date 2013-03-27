@@ -27,6 +27,8 @@ match'/search' => 'pieces#search'
 
   get "site/faq"
 
+  get "site/corporateclient"
+
   resources :artists
 
   resources :pieces
@@ -51,7 +53,8 @@ match'/search' => 'pieces#search'
 	match '/index' => 'site#index'
 	match '/about' => 'site#about'
 	match '/faq' => 'site#faq'
-	
+	match '/corporateclient' => 'site#corporateclient'
+
 	match '/artstyle/:id' => 'pieces#artstyle'
 	match '/artmedium/:id' => 'pieces#artmedium'
 	match '/artcolour/:id' => 'pieces#artcolour'
