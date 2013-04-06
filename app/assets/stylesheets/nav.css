@@ -2,11 +2,11 @@
 .no-js nav li:hover ul { display:block; }
 
 /* base nav styles */
-.navbar nav { display:block; margin:0 auto 20px; border:1px solid #222; position:relative; background-color:#FFF; font:16px Tahoma, Sans-serif; }
+.navbar nav { display:block; margin:0 auto 20px; position:relative; background-color:#FFF; font:16px Tahoma, Sans-serif; }
 .navbar nav ul { padding:0; margin:0; }
 .navbar nav li { position:relative; float:left; list-style-type:none; }
 .navbar nav ul:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
-.navbar nav li a { display:block; padding:10px 20px; border-left:1px solid #999; border-right:1px solid #222; color:#000; text-decoration:none; }
+.navbar nav li a { display:block; padding:10px 20px; color:#000; text-decoration:none; font-family: ‘Trebuchet MS’, Helvetica, sans-serif; font-weight: bold; text-transform:uppercase;}
 .navbar nav ul a:hover { background-color:#00CC00; color: #FFF ; }
 .navbar nav li a:focus { outline:none; text-decoration:underline; }
 .navbar nav li:first-child a { border-left:none; }

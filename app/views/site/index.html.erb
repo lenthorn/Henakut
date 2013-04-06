@@ -6,7 +6,44 @@
 <h2>Featured Artists</h2><img src="/assets/linebreak.jpg" />
 </div>
 <%= render :partial => 'artists/featuredartist' %>
+<div class="lefthone">
+<a href="../articles.html" title="Blog" style="text-decoration: none;"><h1>Blog</h1></a><img src="/assets/linebreak.jpg" />
+</div>
+<% @articles.each do |article| %>
 
+<br />
 
+<div class="articleindex">
+	<%= link_to article.title, article %>
+<br />
+<br />
+<div class="services">
+	<%= link_to (image_tag article.imageurl), article %>
+<%= truncate(article.body, :length => 500) %> <%= link_to "Read More", article %>
+</div>
 
-
+<% end %>
+</div>
+<br />
+<div class="list_carousel">
+				<ul id="foo2">
+					<li>c</li>
+					<li>a</li>
+					<li>r</li>
+					<li>o</li>
+					<li>u</li>
+					<li>F</li>
+					<li>r</li>
+					<li>e</li>
+					<li>d</li>
+					<li>S</li>
+					<li>e</li>
+					<li>l</li>
+					<li> </li>
+				</ul>
+				<div class="clearfix"></div>
+				<a id="prev2" class="prev" href="#">&lt;</a>
+				<a id="next2" class="next" href="#">&gt;</a>
+				<div id="pager2" class="pager"></div>
+			</div>
+			<br />

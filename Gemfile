@@ -5,6 +5,8 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem "cancan"
+
 gem 'sqlite3'
 
 gem 'devise', '2.1.2'
@@ -28,6 +30,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem 'carrierwave'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

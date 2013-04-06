@@ -9,14 +9,14 @@
 <% @pieces.each do |piece| %>
 
 <div class="photos">
-<%= link_to (image_tag piece.artimage_url, :style => "height:100px"), piece %>
+<%= link_to (image_tag piece.artimage_url), piece %>
 	
 <br />
 <%= link_to piece.name, piece %>
 <br />
 <span class="price"><%= number_to_currency( piece.price, :unit=>"&euro;") %></span>
 <br />
-<a href="/cart/<%= piece.id %>"><img style="border: 0px;" src="/assets/add to cart 2.jpg" /></a>
+
 
 </div>
 

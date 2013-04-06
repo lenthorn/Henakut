@@ -1,4 +1,6 @@
 Henakut::Application.routes.draw do
+  resources :articles
+
   resources :categories, :except => [:index, :show]
   resources :forums, :except => :index do
     resources :topics, :shallow => true, :except => :index do
@@ -29,6 +31,13 @@ match'/search' => 'pieces#search'
 
   get "site/corporateclient"
 
+  get "site/commissionartwork"
+
+  get "site/commissionartworkindex"
+
+
+  get "site/becomeanartist"
+
   resources :artists
 
   resources :pieces
@@ -54,6 +63,9 @@ match'/search' => 'pieces#search'
 	match '/about' => 'site#about'
 	match '/faq' => 'site#faq'
 	match '/corporateclient' => 'site#corporateclient'
+  match '/commissionartwork' => 'site#commissionartwork'
+  match '/commissionartworkindex' => 'site#commissionartworkindex'
+  match '/becomeanartist' => 'site#becomeanartist'
 
 	match '/artstyle/:id' => 'pieces#artstyle'
 	match '/artmedium/:id' => 'pieces#artmedium'
