@@ -70,7 +70,7 @@ def artcolour
   end
  end
 
- def search
+ def _search
     
     @pieces = []
     

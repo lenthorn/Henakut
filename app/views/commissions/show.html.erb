@@ -1,0 +1,32 @@
+<h1>Listing commissions</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Style</th>
+    <th>Image</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @commissions.each do |commission| %>
+  <tr>
+    <td><%= commission.name %><br /><%= link_to 'Edit', edit_commission_path(commission) %>
+    <%= link_to 'Destroy', commission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= commission.email %><br />
+      <%= commission.style %>
+    </td>
+    <td><%= commission.colour %><br />
+    <%= commission.artist %></td>
+    
+    <td><%= image_tag commission.image.to_s, :style => "width:200px;" %></td>
+
+  </tr>
+
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Commission', new_commission_path %>

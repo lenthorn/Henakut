@@ -1,4 +1,6 @@
 Henakut::Application.routes.draw do
+  resources :commissions
+
   resources :articles
 
   resources :categories, :except => [:index, :show]

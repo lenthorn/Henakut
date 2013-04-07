@@ -1,0 +1,31 @@
+<div class="lefthone">
+<h3>Commission Art</h3><img src="/assets/linebreak.jpg" />
+</div>
+
+<div class="centered">
+
+<img src="/assets/commission/commissionartwork.png" />
+
+    </div>
+
+    <div class="lefthone">
+<h3>The Process</h3><img src="/assets/linebreak.jpg" />
+</div>
+
+<div class="services">
+<%= link_to (image_tag "/assets/commission/start.png"), new_commission_path %>
+<ol>
+    <li>Upload reference picture</li>
+    <li>Pick a style</li>
+    <li>Pick desired colours</li>
+    <li>Receive quote and time period</li>
+    <li>Artwork prepared</li>
+    <li>Artwor delivered</li>
+</ol>
+</div>
+<% if current_user.try(:admin?) %>
+<a href="../commissions/show">Show</a>
+<% end %>
+
+<br />
+

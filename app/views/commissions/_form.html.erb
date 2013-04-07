@@ -1,0 +1,47 @@
+<%= form_for @commission, :html => {:multipart => true} do |f| %>
+  <% if @commission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@commission.errors.count, "error") %> prohibited this commission from being saved:</h2>
+
+      <ul>
+      <% @commission.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :style %><br />
+    <%= f.select :artist, ['Realism', 'Street Art', 'Abstract', 'Modern', 'Tattoo', 'Black & White'], :prompt => 'Select One'  %>
+  </div>
+  <div class="field">
+    <%= f.label :colour %><br />
+    <%= f.select :colour, ['Red', 'Blue', 'Black', 'Green', 'Orange', 'White', 'Brown', 'Yellow'], :prompt => 'Select One' %>
+  </div>
+  <div class="field">
+    <%= f.label :artist %><br />
+  
+      <%= f.select :artist, @artname, :prompt => 'Select One'  %><br />
+      <br />
+      <%= f.label :image %><br />
+      <%= f.file_field :image %>
+    <br />
+    <br />
+    <%= f.label :remote_image_url, "or image URL"  %><br />
+      <%= f.text_field :remote_image_url %>
+
+  </div>
+  <br />
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
